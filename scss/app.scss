@@ -1,7 +1,8 @@
 @import "var";
+@import "reset";
 @import "rec";
+@import "header";
 
-#header {
-    height: $header-height;
-    background: $header-background;
+body{
+    background: $body-background;
 }
