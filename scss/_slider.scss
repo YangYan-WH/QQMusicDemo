@@ -1,6 +1,10 @@
 .qq-slider{
     width: 100%;
     overflow: hidden;
+    .qq-slider-wrap{
+        display: flex;
+        //width: 500%;
+    }
     .qq-slider-item{
         > a {
             display: block;
@@ -9,4 +13,5 @@
             }
         }
     }
+    
 }
