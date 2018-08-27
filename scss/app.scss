@@ -1,0 +1,7 @@
+@import "var";
+@import "rec";
+
+#header {
+    height: $header-height;
+    background: $header-background;
+}
