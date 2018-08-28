@@ -3,6 +3,7 @@
     overflow: hidden;
     .qq-slider-wrap{
         display: flex;
+        transition: .5s;
         //width: 500%;
     }
     .qq-slider-item{
