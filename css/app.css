@@ -14,12 +14,43 @@ ul, ol {
   padding: 0;
   list-style: none; }
 
-.lsit.radio {
-  font-size: 16px;
-  margin: 0 10px;
-  color: #000;
-  margin-bottom: 11px;
-  font-weight: normal; }
+.radios, .playlists {
+  margin: 14px 0 10px 10px; }
+  .radios .title, .playlists .title {
+    font-size: 16px;
+    margin-bottom: 11px;
+    font-weight: normal;
+    color: #000; }
+  .radios .list, .playlists .list {
+    display: flex;
+    flex-wrap: wrap; }
+    .radios .list .list-item, .playlists .list .list-item {
+      flex: 1;
+      font-size: 14px;
+      flex-basis: 40%;
+      background: #fff;
+      margin-right: 10px;
+      margin-bottom: 10px; }
+      .radios .list .list-item .list-media, .playlists .list .list-item .list-media {
+        position: relative; }
+      .radios .list .list-item .list-title, .playlists .list .list-item .list-title {
+        height: 36px;
+        margin-top: 5px;
+        padding: 0 5px; }
+      .radios .list .list-item .icon, .playlists .list .list-item .icon {
+        background-repeat: no-repeat;
+        background-size: 24px 60px;
+        background-image: url(../images/list_sprite.png); }
+      .radios .list .list-item .icon-play, .playlists .list .list-item .icon-play {
+        height: 24px;
+        bottom: 5px;
+        right: 5px;
+        width: 24px;
+        position: absolute;
+        background-position: 0 0; }
+      .radios .list .list-item img, .playlists .list .list-item img {
+        width: 100%;
+        display: block; }
 
 #header {
   display: flex;
