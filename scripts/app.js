@@ -1,7 +1,5 @@
 (function () {
-    fetch('../json/rec.json')
-        .then(res => res.json())
-        .then(render)
+    fetch('../json/rec.json').then(res => res.json()).then(render)
     function render(json){
         renderSlider(json.data.slider)
         renderRadios(json.data.radioList)
