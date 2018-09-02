@@ -7,6 +7,7 @@
         height: 100px;
         background: #fff;
         margin-bottom: 10px;
+        overflow: hidden;
     }
     .top-item-media{
         float: left;
@@ -33,6 +34,13 @@
             transform: rotate(315deg);
             border-right: 1px solid #b2b2b2;
             border-bottom: 1px solid #b2b2b2;
+        }
+        .top-item-list{
+            .top-item-song{
+                font-size: 14px;
+                white-space: nowrap;
+                overflow: hidden;
+            }
         }
     }
 }

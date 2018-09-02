@@ -23,6 +23,11 @@ i {
 img {
   border: none; }
 
+.ellipsis {
+  overflow: hidden;
+  margin-bottom: 5px;
+  font-size: 16px; }
+
 .radios, .playlists {
   margin: 14px 0 10px 10px; }
   .radios .title, .playlists .title {
@@ -115,7 +120,8 @@ img {
 .toplist .top-item {
   height: 100px;
   background: #fff;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  overflow: hidden; }
 .toplist .top-item-media {
   float: left; }
   .toplist .top-item-media img {
@@ -139,6 +145,10 @@ img {
     transform: rotate(315deg);
     border-right: 1px solid #b2b2b2;
     border-bottom: 1px solid #b2b2b2; }
+  .toplist .top-item-info .top-item-list .top-item-song {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden; }
 
 body {
   background: #f4f4f4; }
