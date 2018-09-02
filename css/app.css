@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0; }
 
-h1, h2 {
+h1, h2, h3 {
   margin: 0;
   font-weight: normal; }
 
@@ -13,6 +13,15 @@ ul, ol {
   margin: 0;
   padding: 0;
   list-style: none; }
+
+a {
+  text-decoration: none; }
+
+i {
+  font-style: normal; }
+
+img {
+  border: none; }
 
 .radios, .playlists {
   margin: 14px 0 10px 10px; }
@@ -99,6 +108,37 @@ ul, ol {
 
 .hide {
   display: none; }
+
+#rank-view {
+  margin: 10px; }
+
+.toplist .top-item {
+  height: 100px;
+  background: #fff;
+  margin-bottom: 10px; }
+.toplist .top-item-media {
+  float: left; }
+  .toplist .top-item-media img {
+    width: 100px;
+    height: 100px;
+    display: block; }
+.toplist .top-item-info {
+  position: relative;
+  padding: 7px 10px 6px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .toplist .top-item-info::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -4px;
+    width: 6px;
+    height: 6px;
+    transform: rotate(315deg);
+    border-right: 1px solid #b2b2b2;
+    border-bottom: 1px solid #b2b2b2; }
 
 body {
   background: #f4f4f4; }
