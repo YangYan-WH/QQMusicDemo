@@ -41,11 +41,17 @@
         <div id='rank-view' class="rank-view tab-content hide">
             <ul class="toplist"></ul>
         </div>
-        <div class="search-view tab-content hide">
-            搜索
+        <div id="search-view"  class="search-view tab-content hide">
+            <div class="input-wrap">
+                <input  id="search" type="text"  placeholder="搜索歌曲 歌单 专辑">
+            </div>
+            <div class="search-results">
+                <ul class='song-list'></ul>
+            </div>
         </div>
     </div>
     <script src="scripts/slider.js"></script>
+    <script src="scripts/search.js"></script>
     <script src="scripts/lazyload.js"></script>
     <script src="scripts/tabs.js"></script>
     <script src="scripts/app.js"></script>

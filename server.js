@@ -10,8 +10,10 @@ const PORT = process.env.PORT || 4000
 const HEADERS = {
     'accept':'applicetion/json',
     'authority': 'c.y.qq.com',
-    'referer': 'htttp://m.y.qq.com/',
+    'referer': 'https://m.y.qq.com',
     'origin': 'https://m.y.qq.com',
+    'access-control-allow-origin': 'https://192.168.0.167:8080',   
+    // 'Access-Control-Allow-Origin': '*',
     'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1'
 }
 
