@@ -42,7 +42,7 @@
         <div id='rank-view' class="rank-view tab-content hide">
             <ul class="toplist"></ul>
         </div>
-        <div id="search-view"  class="search-view tab-content hide">
+        <!-- <div id="search-view"  class="search-view tab-content hide">
             <div class="input-wrap">
                 <input  id="search" type="text"  placeholder="搜索歌曲 歌单 专辑">
             </div>
@@ -50,6 +50,23 @@
                 <ul class='song-list'></ul>
             </div>
             <div class="search-loading"></div>
+        </div> -->
+        <div id="search-view" class="search-view tab-content hide">
+            <div class="search-bar">
+              <div class="input-wrap">
+                <input id="search" type="text" placeholder="搜索歌曲、歌单、专辑">
+                <span class="icon-search"></span>
+              </div>
+            </div>
+            <div class="search-results">
+              <div class="song-list"></div>
+            </div>
+            <div class="search-loading">
+              <i class="loading-icon"></i>
+              <div class="loading-text">正在载入更多...</div>
+              <div class="loading-done hide">已加载全部</div>
+            </div>
+          </div>
         </div>
     </div>
     <script src="scripts/slider.js"></script>
