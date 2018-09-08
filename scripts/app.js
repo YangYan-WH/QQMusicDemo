@@ -18,6 +18,30 @@
 
     let search = new Search(document.querySelector('#search-view'))
 
+    let player = new MusicPlayer(document.querySelector('#player'))
+    document.querySelector('.show-player').addEventListener('click',()=>{
+        player.show()
+    })
+
+    function onHashChange(){
+        let hash = location.hash
+        if(/^#player\?.+/.test(hash)){
+            let matches = hash.slice(hash.indexOf('?')+1).match(/(\w+)=([^&]+)/g)
+            let options = matches && matches.reduce((res,cur)=>{
+                let arr = cur.split('=')
+                res[arr[0]] = arr[i]
+                return res
+            },{})
+            player.play(options)
+        }else{
+            player.hide()
+        }
+    }
+
+    onHashChange()
+    window.addEventListener('hashChange',onHashChange)
+    window.search = search
+    window.player = player
     function renderSlider(slides){
         slides = slides.map(slide => { 
             return {link:slide.linkUrl,image:slide.picUrl}

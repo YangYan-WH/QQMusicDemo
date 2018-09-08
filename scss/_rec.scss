@@ -1,47 +1,74 @@
-.radios ,.playlists{
+.radios,
+.playlists {
     margin: 14px 0 10px 10px;
 
     .title {
         font-size: 16px;
         margin-bottom: 11px;
-        font-weight: normal;       
+        font-weight: normal;
         color: #000;
     }
-    .list{
+
+    .list {
         display: flex;
         flex-wrap: wrap;
-        .list-item{
-           flex: 1;
-           font-size: 14px;
-           flex-basis: 40%;
-           background: #fff;
+
+        .list-item {
+            flex: 1;
+            font-size: 14px;
+            flex-basis: 40%;
+            background: #fff;
             margin-right: 10px;
             margin-bottom: 10px;
-            .list-media{
-                position: relative;     
+
+            .list-media {
+                position: relative;
             }
-            .list-title{
+
+            .list-title {
                 height: 36px;
                 margin-top: 5px;
                 padding: 0 5px;
             }
-            .icon{
+
+            .icon {
                 background-repeat: no-repeat;
                 background-size: 24px 60px;
                 background-image: url(../images/list_sprite.png)
             }
-            .icon-play{
+
+            .icon-play {
                 height: 24px;
                 bottom: 5px;
                 right: 5px;
                 width: 24px;
                 position: absolute;
-                background-position:0 0; 
+                background-position: 0 0;
             }
-            img{
-               width: 100%;
-               display: block;
-           }
+
+            img {
+                width: 100%;
+                display: block;
+            }
         }
     }
+}
+
+.radios .list-title {
+    height: 36px;
+}
+
+#rec-view .footer {
+    margin: 10px 0 22px;
+}
+
+.footer-logo {
+    display: block;
+    width: 82px;
+    height: 24px;
+    margin: 0 auto 10px;
+    background-image: url(../images/logo_footer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-indent: -9999px;
 }
