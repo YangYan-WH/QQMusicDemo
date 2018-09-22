@@ -1,105 +1,137 @@
-(function () {
-    fetch("./json/rec.json")
-        .then(res => res.json())
-        .then(render)
+// (function () {
+//     fetch("./json/rec.json")
+//         .then(res => res.json())
+//         .then(render)
     
 
-    fetch('./json/rank.json')
-        .then(res=>res.json())
-        .then(json => json.data.topList)
-        .then(renderTopList)
+//     fetch('./json/rank.json')
+//         .then(res=>res.json())
+//         .then(json => json.data.topList)
+//         .then(renderTopList)
     
-    function render(json){
-        renderSlider(json.data.slider)
-        renderRadios(json.data.radioList)
-        renderPlaylists(json.data.songList)
-        lazyload(document.querySelectorAll('.lazyload'))
-    }
+//     function render(json){
+//         renderSlider(json.data.slider)
+//         renderRadios(json.data.radioList)
+//         renderPlaylists(json.data.songList)
+//         lazyload(document.querySelectorAll('.lazyload'))
+//     }
 
-    let search = new Search(document.querySelector('#search-view'))
+//     let search = new Search(document.querySelector('#search-view'))
 
-    let player = new MusicPlayer(document.querySelector('#player'))
-    document.querySelector('.show-player').addEventListener('click',()=>{
-        player.show()
-    })
+//     let player = new MusicPlayer(document.querySelector('#player'))
+//     document.querySelector('.show-player').addEventListener('click',()=>{
+//         player.show()
+//     })
 
-    function onHashChange(){
-        let hash = location.hash
-        if(/^#player\?.+/.test(hash)){
-            let matches = hash.slice(hash.indexOf('?')+1).match(/(\w+)=([^&]+)/g)
-            let options = matches && matches.reduce((res,cur)=>{
-                let arr = cur.split('=')
-                res[arr[0]] = arr[i]
-                return res
-            },{})
-            player.play(options)
-        }else{
-            player.hide()
-        }
-    }
+//     function onHashChange(){
+//         let hash = location.hash
+//         if(/^#player\?.+/.test(hash)){
+//             let matches = hash.slice(hash.indexOf('?')+1).match(/(\w+)=([^&]+)/g)
+//             let options = matches && matches.reduce((res,cur)=>{
+//                 let arr = cur.split('=')
+//                 res[arr[0]] = arr[i]
+//                 return res
+//             },{})
+//             player.play(options)
+//         }else{
+//             player.hide()
+//         }
+//     }
 
-    onHashChange()
-    window.addEventListener('hashChange',onHashChange)
-    window.search = search
-    window.player = player
-    function renderSlider(slides){
-        slides = slides.map(slide => { 
-            return {link:slide.linkUrl,image:slide.picUrl}
-        })
-        new Slider({
-            el: document.querySelector('#slider'),
-            slides
-        })
-    }
+//     onHashChange()
+//     window.addEventListener('hashChange',onHashChange)
+//     window.search = search
+//     window.player = player
+//     function renderSlider(slides){
+//         slides = slides.map(slide => { 
+//             return {link:slide.linkUrl,image:slide.picUrl}
+//         })
+//         new Slider({
+//             el: document.querySelector('#slider'),
+//             slides
+//         })
+//     }
 
-    function renderRadios(radios){
-        document.querySelector('.radios .list').innerHTML=radios.map(radio =>
-        `<div class="list-item">
-            <div class="list-media">
-                <img class='lazyload' data-src="${radio.picUrl}">
-                <span class="icon icon-play"></span>
-            </div>
-            <div class="list-title">${radio.Ftitle}</div>    
-        </div>`).join('')
-    }
+//     function renderRadios(radios){
+//         document.querySelector('.radios .list').innerHTML=radios.map(radio =>
+//         `<div class="list-item">
+//             <div class="list-media">
+//                 <img class='lazyload' data-src="${radio.picUrl}">
+//                 <span class="icon icon-play"></span>
+//             </div>
+//             <div class="list-title">${radio.Ftitle}</div>    
+//         </div>`).join('')
+//     }
 
-    function renderPlaylists(playlists) {
-        document.querySelector('.playlists .list').innerHTML=playlists.map(list =>
-            `<div class="list-item">
-                <div class="list-media">
-                    <img class='lazyload' data-src="${list.picUrl}">
-                    <span class="icon icon-play"></span>
-                </div>
-                <div class="list-title">${list.songListDesc}</div>    
-            </div>`).join('')
-    }
+//     function renderPlaylists(playlists) {
+//         document.querySelector('.playlists .list').innerHTML=playlists.map(list =>
+//             `<div class="list-item">
+//                 <div class="list-media">
+//                     <img class='lazyload' data-src="${list.picUrl}">
+//                     <span class="icon icon-play"></span>
+//                 </div>
+//                 <div class="list-title">${list.songListDesc}</div>    
+//             </div>`).join('')
+//     }
 
-    function renderTopList(list){
-        document.querySelector('#rank-view .toplist').innerHTML = list.map(item =>
-        `<li class='top-item'>
-            <div class='top-item-media'>
-                <a href='#'>
-                    <img class='lazyload' data-src='${item.picUrl}'>
-                </a>
-            </div>
-            <div class='top-item-info'>
-                <h3 class='top-item-tittle ellipsis'>${item.topTitle}</h3> 
-                <ul class='top-item-list'>
-                    ${songlist(item.songList)}
-                </ul>
-            </div>
-        </li>`
-        ).join('')
+//     function renderTopList(list){
+//         document.querySelector('#rank-view .toplist').innerHTML = list.map(item =>
+//         `<li class='top-item'>
+//             <div class='top-item-media'>
+//                 <a href='#'>
+//                     <img class='lazyload' data-src='${item.picUrl}'>
+//                 </a>
+//             </div>
+//             <div class='top-item-info'>
+//                 <h3 class='top-item-tittle ellipsis'>${item.topTitle}</h3> 
+//                 <ul class='top-item-list'>
+//                     ${songlist(item.songList)}
+//                 </ul>
+//             </div>
+//         </li>`
+//         ).join('')
 
-        lazyload(document.querySelectorAll('#rank-view .toplist .lazyload'))
+//         lazyload(document.querySelectorAll('#rank-view .toplist .lazyload'))
 
-        function songlist(songs){
-            return songs.map((song, i )=>
-                `<li class='top-item-song'>
-                    <i class='song-index'>${i+1}</i>
-                    <span class='song-name'>${song.songname}</span>- ${song.singername}
-                </li>`
-            ).join('')
-        }
-    }
-})()
+//         function songlist(songs){
+//             return songs.map((song, i )=>
+//                 `<li class='top-item-song'>
+//                     <i class='song-index'>${i+1}</i>
+//                     <span class='song-name'>${song.songname}</span>- ${song.singername}
+//                 </li>`
+//             ).join('')
+//         }
+//     }
+// })()
+import './tab.js'
+import { Search } from './search.js'
+import { TopList } from './toplist.js'
+import { Recommend } from './recommend.js'
+import { MusicPlayer } from './music_player.js'
+
+let search = new Search(document.querySelector('#search-view'))
+let player = new MusicPlayer(document.querySelector('#player'))
+let toplist = new TopList(document.querySelector('#rank-view')).launch()
+let recommend = new Recommend(document.querySelector('#rec-view')).launch()
+
+document.querySelector('.show-player').addEventListener('click', () => {
+  player.show()
+})
+
+onHashChange()
+addEventListener('hashchange', onHashChange)
+
+function onHashChange() {
+  let hash = location.hash
+  if (/^#player\?.+/.test(hash)) {
+    let matches = hash.slice(hash.indexOf('?') + 1).match(/(\w+)=([^&]+)/g)
+    let options = matches && matches.reduce((res, cur) => {
+      let arr = cur.split('=')
+      res[arr[0]] = decodeURIComponent(arr[1])
+      return res
+    }, {})
+    player.play(options)
+  } else {
+    player.hide()
+  }
+}
