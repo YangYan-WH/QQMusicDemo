@@ -1,33 +1,36 @@
 {
-  "name": "qqmusicdemo",
+  "name": "qq-music",
   "version": "1.0.0",
-  "description": "## 仿QQ音乐项目",
+  "description": "QQ Music",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dist": "node-sass --output-style compressed scss/app.scss > dist/app.css && autoprefixer-cli -b \"last 2 versions\" -o dist/app.css dist/app.css  && webpack -p"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YangYan-WH/QQMusic_demo.git"
+    "url": "git+https://github.com/twhy/qq-music.git"
   },
   "keywords": [],
   "author": {
-    "name": "Yan Yang",
-    "email": "15927288912@126.com"
+    "name": "Tom Wang",
+    "email": "tom.wanghaiyi@gmail.com"
   },
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/YangYan-WH/QQMusic_demo/issues"
+    "url": "https://github.com/twhy/qq-music/issues"
   },
-  "homepage": "https://github.com/YangYan-WH/QQMusic_demo#readme",
+  "homepage": "https://github.com/twhy/qq-music#readme",
   "dependencies": {
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
-    "webpack-cli": "^3.1.0",
-    "webpack-command": "^0.4.1"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "webpack": "^3.5.6"
   }
 }

@@ -1,18 +1,17 @@
-.qq-slider{
-    width: 100%;
-    overflow: hidden;
-    .qq-slider-wrap{
-        display: flex;
-        transition: .5s;
-        //width: 500%;
+.qq-slider {
+  width: 100%;
+  overflow: hidden;
+  .qq-slider-wrap {
+    display: flex;
+  }
+  .qq-slider-item {
+    flex-basis: 100%;
+    > a {
+      display: block;
+      img { 
+        width: 100%;
+        display: block;
+      }
     }
-    .qq-slider-item{
-        > a {
-            display: block;
-            img{
-                width: 100%
-            }
-        }
-    }
-    
+  }
 }
